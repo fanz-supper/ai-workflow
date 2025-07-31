@@ -6,10 +6,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
 @EnableJpaRepositories
-public class OllamaApplication {
+public class RunApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(OllamaApplication.class, args);
+        SpringApplication.run(RunApplication.class, args);
     }
 
 }
