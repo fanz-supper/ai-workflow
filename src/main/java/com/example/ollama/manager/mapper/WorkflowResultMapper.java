@@ -1,0 +1,19 @@
+package com.example.ollama.manager.mapper;
+
+import com.example.ollama.manager.dao.WorkflowResultDao;
+import com.example.ollama.manager.dto.WorkflowResultDTO;
+import org.mapstruct.Mapper;
+import org.mapstruct.NullValuePropertyMappingStrategy;
+import org.mapstruct.factory.Mappers;
+
+/**
+ * @title: WorkflowResultMapper
+ * @description:
+ * @author: zhangfan
+ * @data: 2025年05月18日 19:33
+ */
+@Mapper(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
+public interface WorkflowResultMapper extends BaseMapper<WorkflowResultDTO, WorkflowResultDao> {
+
+    WorkflowResultMapper INSTANCE = Mappers.getMapper(WorkflowResultMapper.class);
+}
