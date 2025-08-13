@@ -11,3 +11,30 @@
 该项目通过标准化、流程化的方式，减少人工干预，提升软件开发效率与代码质量，尤其适用于需要快速迭代和高效开发的项目场景。 
 ![输入图片说明](https://foruda.gitee.com/images/1747122739730134125/6007815e_15822687.png "屏幕截图")
 
+
+#### EU-Based Architecture Overview
+The system implements a sophisticated Execution Unit (EU) architecture where each EU represents a specialized processing component within the larger workflow graph. This design enables dynamic composition of processing pipelines based on workflow requirements.
+
+Core EU Component System
+
+<img width="1574" height="560" alt="image" src="https://github.com/user-attachments/assets/588a682a-3c18-4ab5-918c-9a4d09466709" />
+
+The ModelEuFactory serves as the central orchestration component, coordinating between different EU types and managing the overall workflow execution pipeline. Each EU maintains specific responsibilities within the processing chain, enabling fine-grained control over individual workflow steps.
+
+Sources: Based on system architecture diagrams provided in context
+
+
+#### Code Generation Workflow Pipeline
+The system processes project descriptions through a standardized pipeline that transforms natural language requirements into structured code outputs through multiple processing stages.
+
+Processing Pipeline Flow
+<img width="711" height="857" alt="image" src="https://github.com/user-attachments/assets/5922d07b-10f8-4503-b8eb-0d626c189a8b" />
+<img width="332" height="831" alt="image" src="https://github.com/user-attachments/assets/0814b370-fa82-4a12-9b92-9136502c895a" />
+
+
+Each stage maintains discrete responsibilities while enabling seamless data flow between components. The ProcessorAssembler dynamically constructs the execution graph based on workflow requirements, allowing for flexible pipeline configuration.
+
+<img width="700" height="691" alt="image" src="https://github.com/user-attachments/assets/511ce244-9419-4235-852b-08b06c8c19e8" />
+
+
+> 项目详情 https://deepwiki.com/fanz-supper/ai-workflow/1.1-system-purpose-and-design
