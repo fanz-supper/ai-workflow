@@ -1,41 +1,43 @@
-# workflow
+# AI Workflow 项目
 
-#### 介绍
+## 项目概述
+**AI Workflow 项目** 是一套集成化、自动化的软件开发流程辅助系统，旨在通过模块化、组件化的设计，高效处理从项目描述输入到最终代码文件生成的全流程任务。该系统通过标准化的自动化流程，减少人工干预，提升软件开发效率与代码质量，特别适用于需要快速迭代和高效开发的项目场景。
 
-本Workflow项目是一套集成化、自动化的软件开发流程辅助系统，旨在通过模块化、组件化的方式，高效处理从项目描述输入到最终代码文件生成的一系列任务。
-
-系统基于多个功能各异的执行单元（EU）构建，涵盖从文本处理、模型调用到文件操作等不同环节。用户输入项目描述后，系统先利用Prompt EU和Model EU对其进行优化处理，提炼关键信息。随后，在设计方案与分区模块阶段，通过特定EU组合生成yaml文件，清晰定义项目结构与配置。
-
-在领域模型构建方面，借助For EU等组件遍历相关元数据，生成包括目录结构的yaml，为项目搭建基础架构。之后，系统进一步生成Java类，期间各EU协同工作，确保代码结构与业务逻辑准确实现。最后，FileWriter EU将生成的代码写入指定文件，完成整个项目开发流程的自动化构建。
-
-该项目通过标准化、流程化的方式，减少人工干预，提升软件开发效率与代码质量，尤其适用于需要快速迭代和高效开发的项目场景。 
+## 系统架构
+  系统基于多个功能各异的**执行单元（Execution Units, EUs）**构建，每个单元负责特定的任务，包括文本处理、模型调用和文件操作等。这些执行单元协同工作，将用户输入转化为结构化、可用于生产环境的代码，构成一个高效的自动化流水线。
+  
 ![输入图片说明](https://foruda.gitee.com/images/1747122739730134125/6007815e_15822687.png "屏幕截图")
 
+## 工作流程
+1. **输入处理**：
+   - 用户提供项目描述，由 **Prompt EU** 和 **Model EU** 进行优化处理。
+   - 这些单元提取和提炼关键信息，确保后续步骤的准确性和清晰性。
 
-#### EU-Based Architecture Overview
-The system implements a sophisticated Execution Unit (EU) architecture where each EU represents a specialized processing component within the larger workflow graph. This design enables dynamic composition of processing pipelines based on workflow requirements.
+2. **设计与模块化**：
+   - 通过特定 EU 组合生成 **YAML 配置文件**，明确定义项目结构与配置。
+   - 此步骤为开发流程奠定清晰、规范的基础。
 
-Core EU Component System
+3. **领域模型构建**：
+   - 利用 **For EU** 等组件遍历相关元数据，生成包含目录结构的 YAML 文件。
+   - 这为项目搭建了基础架构。
 
-<img width="1574" height="560" alt="image" src="https://github.com/user-attachments/assets/588a682a-3c18-4ab5-918c-9a4d09466709" />
+4. **代码生成**：
+   - 系统通过多个 EU 协同工作，生成 **Java 类**，确保代码结构与业务逻辑高度一致。
+   - 此过程保证了生成代码的准确性和可靠性。
 
-The ModelEuFactory serves as the central orchestration component, coordinating between different EU types and managing the overall workflow execution pipeline. Each EU maintains specific responsibilities within the processing chain, enabling fine-grained control over individual workflow steps.
+5. **文件输出**：
+   - **FileWriter EU** 将生成的代码写入指定文件，完成整个自动化开发流程。
 
-Sources: Based on system architecture diagrams provided in context
+## 核心优势
+- **自动化**：通过自动化处理重复性任务，大幅减少人工操作。
+- **标准化**：通过预定义的流程确保代码结构和质量的一致性。
+- **可扩展性**：支持快速迭代，适应快节奏的开发环境。
+- **模块化**：基于 EU 的灵活架构，便于定制和扩展，满足多样化项目需求。
 
-
-#### Code Generation Workflow Pipeline
-The system processes project descriptions through a standardized pipeline that transforms natural language requirements into structured code outputs through multiple processing stages.
-
-#### Processing Pipeline Flow
-<img width="711" height="857" alt="image" src="https://github.com/user-attachments/assets/5922d07b-10f8-4503-b8eb-0d626c189a8b" />
-
-Each stage maintains discrete responsibilities while enabling seamless data flow between components. The ProcessorAssembler dynamically constructs the execution graph based on workflow requirements, allowing for flexible pipeline configuration.
-
-#### Modular Component Design
-The system implements a highly modular design where components can be independently developed, tested, and deployed. This architecture supports extensibility and maintainability through clear separation of concerns.
-
-<img width="680" height="531" alt="image" src="https://github.com/user-attachments/assets/0e3c64be-d4f7-4cf5-a6e8-d0b1f036af2e" />
-
+## 适用场景
+AI Workflow 项目在以下场景中表现尤为出色：
+- 快速原型开发与迭代。
+- 需最小化人工干预的高质量代码生成。
+- 复杂软件项目的流程优化。
 
 > 项目详情 https://deepwiki.com/fanz-supper/ai-workflow/1.1-system-purpose-and-design
